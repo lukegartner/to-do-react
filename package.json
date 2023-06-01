@@ -14,7 +14,7 @@
     "nodemon": "^2.0.6"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "npm run server & npm run client && kill $!",
     "build": "react-scripts build",
     "client": "react-scripts start",
     "server": "nodemon  --watch server server/server.js",
