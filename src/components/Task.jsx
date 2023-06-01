@@ -1,8 +1,8 @@
-const Task = () => {
+const Task = ({ title, note, complete }) => {
   return (
     <div className="task">
-      <h2>title</h2>
-      <p>note</p>
+      <h2>{title}</h2>
+      <p>{note}</p>
     </div>
   );
 };
