@@ -1,22 +1,7 @@
 import { Task } from "./index";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-const Tasks = () => {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    getTasks();
-  }, []);
-
-  const getTasks = () => {
-    fetch("/todo")
-      .then((response) => response.json())
-      .then(setTasks)
-      .catch((error) => {
-        console.error(error);
-      });
-  };
-
+const Tasks = ({ tasks }) => {
   return (
     <div className="tasks">
       {tasks.map(({ id, title, note, complete }) => {

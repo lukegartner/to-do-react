@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TaskInputs = () => {
+const TaskInputs = ({ getTasks }) => {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
 
@@ -13,7 +13,11 @@ const TaskInputs = () => {
         "Content-Type": "application/json",
       },
     })
-      .then(() => {})
+      .then(() => {
+        setTitle("");
+        setNote("");
+        getTasks();
+      })
       .catch((error) => {
         console.log(error);
       });
