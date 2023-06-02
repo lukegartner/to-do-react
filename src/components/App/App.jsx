@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Header, Tasks } from "../index";
+import { Header, TaskInputs, Tasks } from "../index";
 
 function App() {
   return (
     <>
       <Header />
+      <TaskInputs />
       <Tasks />
     </>
   );
