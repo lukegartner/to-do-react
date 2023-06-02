@@ -1,4 +1,5 @@
 import { Task } from "./index";
+import "./styles/Tasks.css";
 // import { useState, useEffect } from "react";
 
 const Tasks = ({ tasks }) => {

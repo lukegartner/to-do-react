@@ -1,0 +1,25 @@
+.tasks {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  grid-gap: 0.5remrem;
+  grid-row-gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 1150px) {
+  .tasks {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .tasks {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 550px) {
+  .tasks {
+    grid-template-columns: 1fr;
+  }
+}

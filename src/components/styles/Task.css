@@ -1,0 +1,18 @@
+.task {
+  position: relative;
+  border-radius: 1rem;
+  width: 17rem;
+  height: 17rem;
+  text-align: center;
+  background-color: #b7b5e4;
+}
+.check-icon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+.trash-icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
