@@ -11,8 +11,12 @@
   top: 0.5rem;
   left: 0.5rem;
 }
-.trash-icon {
+.more-icon {
+  font-size: 1.25rem;
   position: absolute;
-  bottom: 0.5rem;
+  top: 0.5rem;
   right: 0.5rem;
+}
+.complete {
+  background-color: #8583a5;
 }

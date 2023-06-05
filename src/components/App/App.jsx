@@ -22,7 +22,7 @@ function App() {
     <>
       <Header />
       <TaskInputs getTasks={getTasks} />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} getTasks={getTasks} />
     </>
   );
 }

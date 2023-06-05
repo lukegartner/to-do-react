@@ -4,7 +4,10 @@ const pool = require("../modules/pool.js");
 
 // GET
 router.get("/", (req, res) => {
-  const queryText = `SELECT * FROM tasks`;
+  const queryText = `
+    SELECT * FROM tasks
+    ORDER BY id;
+    `;
 
   pool
     .query(queryText)
@@ -33,6 +36,25 @@ router.post("/", (req, res) => {
     });
 });
 // PUT
+router.put("/", (req, res) => {
+  const taskId = req.query.id;
+  const toggledTask = req.body;
+  const queryText = `
+    UPDATE tasks SET "complete" = $1
+    WHERE "id" = ${taskId};
+  `;
+
+  console.log(taskId);
+
+  pool
+    .query(queryText, [toggledTask.complete])
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 
 // DELETE
 
