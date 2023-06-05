@@ -1,0 +1,14 @@
+.more {
+  position: absolute;
+  top: 1.75rem;
+  right: -0.1rem;
+  background-color: white;
+  border-radius: 5rem;
+  padding: 0.25rem;
+}
+.edit-icon {
+  color: rgb(31, 31, 194);
+}
+.delete-icon {
+  color: rgb(211, 23, 23);
+}

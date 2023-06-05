@@ -1,8 +1,15 @@
 import "./styles/Task.css";
+import { useState } from "react";
+// components
+import More from "./More";
+
+// icons
 import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
 import { LuMoreHorizontal } from "react-icons/lu";
 
 const Task = ({ id, title, note, complete, getTasks }) => {
+  const [viewMore, setViewMore] = useState(false);
+
   const toggleComplete = () => {
     const toggledTask = { id, title, note, complete: !complete };
 
@@ -40,7 +47,13 @@ const Task = ({ id, title, note, complete, getTasks }) => {
       )}
       <h2>{title}</h2>
       <p>{note}</p>
-      <LuMoreHorizontal className="more-icon" />
+      <LuMoreHorizontal
+        className="more-icon"
+        onClick={() => {
+          setViewMore(!viewMore);
+        }}
+      />
+      {viewMore ? <More id={id} getTasks={getTasks} /> : null}
     </div>
   );
 };

@@ -41,13 +41,13 @@ router.put("/", (req, res) => {
   const toggledTask = req.body;
   const queryText = `
     UPDATE tasks SET "complete" = $1
-    WHERE "id" = ${taskId};
+    WHERE "id" = $2;
   `;
 
   console.log(taskId);
 
   pool
-    .query(queryText, [toggledTask.complete])
+    .query(queryText, [toggledTask.complete, taskId])
     .then(() => {
       res.sendStatus(201);
     })
@@ -57,5 +57,20 @@ router.put("/", (req, res) => {
 });
 
 // DELETE
+router.delete("/", (req, res) => {
+  const taskId = req.query.id;
+  const queryText = `
+    DELETE FROM tasks WHERE "id" = $1;
+  `;
+
+  pool
+    .query(queryText, [taskId])
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
 
 module.exports = router;
