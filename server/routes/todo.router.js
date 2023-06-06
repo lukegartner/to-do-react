@@ -38,16 +38,17 @@ router.post("/", (req, res) => {
 // PUT
 router.put("/", (req, res) => {
   const taskId = req.query.id;
-  const toggledTask = req.body;
+  const { title, note, complete } = req.body;
   const queryText = `
-    UPDATE tasks SET "complete" = $1
-    WHERE "id" = $2;
+    UPDATE tasks 
+    SET "title" = $1, "note" = $2, "complete" = $3
+    WHERE "id" = $4;
   `;
 
   console.log(taskId);
 
   pool
-    .query(queryText, [toggledTask.complete, taskId])
+    .query(queryText, [title, note, complete, taskId])
     .then(() => {
       res.sendStatus(201);
     })

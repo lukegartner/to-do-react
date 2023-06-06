@@ -31,8 +31,7 @@ const TaskInputs = ({ getTasks }) => {
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         />
-        <input
-          type="text"
+        <textarea
           placeholder="note"
           onChange={(e) => setNote(e.target.value)}
           value={note}

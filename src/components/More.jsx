@@ -1,6 +1,15 @@
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import "./styles/More.css";
-const More = ({ id, getTasks }) => {
+const More = ({
+  id,
+  title,
+  note,
+  complete,
+  getTasks,
+  isEditing,
+  setIsEditing,
+  setViewMore,
+}) => {
   const deleteTask = () => {
     fetch(`/todo/?id=${id}`, {
       method: "DELETE",
@@ -18,7 +27,13 @@ const More = ({ id, getTasks }) => {
 
   return (
     <div className="more">
-      <AiFillEdit className="edit-icon" />
+      <AiFillEdit
+        className="edit-icon"
+        onClick={() => {
+          setIsEditing(!isEditing);
+          setViewMore(false);
+        }}
+      />
       <AiFillDelete className="delete-icon" onClick={deleteTask} />
     </div>
   );
