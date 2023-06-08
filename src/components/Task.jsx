@@ -95,9 +95,6 @@ const Task = ({ id, title, note, complete, getTasks }) => {
       {viewMore ? (
         <More
           id={id}
-          title={title}
-          note={note}
-          complete={complete}
           getTasks={getTasks}
           isEditing={isEditing}
           setIsEditing={setIsEditing}

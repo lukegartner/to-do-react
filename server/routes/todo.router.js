@@ -60,12 +60,23 @@ router.put("/", (req, res) => {
 // DELETE
 router.delete("/", (req, res) => {
   const taskId = req.query.id;
-  const queryText = `
-    DELETE FROM tasks WHERE "id" = $1;
-  `;
+  const deleteType = req.query.type;
+  let queryText = `DELETE FROM tasks;`;
+  let queryArgs = [];
+
+  if (taskId) {
+    queryText = `
+      DELETE FROM tasks WHERE "id" = $1;
+    `;
+    queryArgs = [taskId];
+  }
+  if (deleteType === "completed") {
+    console.log("delete completed");
+    queryText = `DELETE FROM tasks WHERE "complete" = true;`;
+  }
 
   pool
-    .query(queryText, [taskId])
+    .query(queryText, queryArgs)
     .then(() => {
       res.sendStatus(204);
     })

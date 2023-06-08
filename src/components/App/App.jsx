@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Header, TaskInputs, Tasks } from "../index";
+import ClearBtns from "../ClearBtns";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <>
       <Header />
       <TaskInputs getTasks={getTasks} />
+      <ClearBtns getTasks={getTasks} />
       <Tasks tasks={tasks} getTasks={getTasks} />
     </>
   );
