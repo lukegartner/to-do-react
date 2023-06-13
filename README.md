@@ -1,9 +1,15 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+SQL to do with React
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This to do list uses sql queries to manage to do items in a database. The project is made with react.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Screen Shot
+
+![Alt text](/public/images/Screenshot%202023-06-13%20at%204.54.27%20PM.png?raw=true "Optional Title")
+
+## Built with
+
+Javascript, HTML, CSS, Node.js, Express.js, SQL, React
